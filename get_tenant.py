@@ -9,7 +9,7 @@ token = raw_input("token: ")
 url = "localhost:5000"
 header = {
   "Content-Type": "application/json",
-  "X-Auth-Token": token,
+  "X-Auth-Token": token
 }
 
 session = HTTPConnection(url)
