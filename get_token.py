@@ -9,8 +9,17 @@ user = raw_input("user: ")
 password = getpass("password: ")
 
 url = "localhost:5000"
-params = '{ "auth":{ "passwordCredentials":{"username": "%s", "password": "%s"} } }' % (user, password)
-header = { "Content-Type": "application/json" }
+params = '''{
+  "auth": {
+    "passwordCredentials": {
+      "username": "%s",
+      "password": "%s"
+    }
+  }
+}''' % (user, password)
+header = {
+  "Content-Type": "application/json"
+}
 
 session = HTTPConnection(url)
 session.request("POST", "/v2.0/tokens", params, header)
